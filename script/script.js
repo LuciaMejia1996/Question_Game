@@ -81,7 +81,7 @@ function IsCorrect(e) {
     negative_points++;
     number_question++;
     falla.textContent = negative_points;
-    Question.textContent = number_question++;
+    Question.textContent = number_question;
     alert('Has Fallado, que mal :c');
     if (negative_points >= 3) {
       alert('Juego Finalizado, has perdido');
