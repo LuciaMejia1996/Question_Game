@@ -70,11 +70,11 @@ function IsCorrect(e) {
     number_question + 1;
     correctas.textContent = pointe;
     Question.textContent = number_question;
-    alert('Has acertado, Felicidades');
+    alert('Has acertado, Felicidades 😃');
     if (pointe >= 3) {
       number_question = 1;
       Question.textContent = number_question;
-      alert('Juego Finalizado, has ganado c:');
+      alert('Juego Finalizado, has ganado  🥳');
       EndGame();
     } else {
       getCuestions();
@@ -84,9 +84,9 @@ function IsCorrect(e) {
     number_question++;
     falla.textContent = negative_points;
     Question.textContent = number_question;
-    alert('Has Fallado, que mal :c');
+    alert('Has Fallado, que mal 😨');
     if (negative_points >= 3) {
-      alert('Juego Finalizado, has perdido');
+      alert('Juego Finalizado, has perdido 😭');
       number_question = 1;
       Question.textContent = number_question;
       EndGame();
