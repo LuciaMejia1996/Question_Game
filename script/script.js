@@ -62,8 +62,10 @@ function EscribirPreguntas({ question, correct, answers }) {
 }
 
 function IsCorrect(e) {
-  console.log(e.target.classList[0]);
-  if (e.target.classList[0] === 'correct') {
+  //console.log(e.target.classList[0]);
+  const p = e.target;
+  const x = p.querySelector('p');
+  if (e.target.classList[0] === 'correct' || x.classList[0] === 'correct') {
     pointe++;
     number_question + 1;
     correctas.textContent = pointe;
