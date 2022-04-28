@@ -283,8 +283,8 @@ body {
 
 
 .part2 > .point > .circulo {
-    width: 15vmin; 
-    height: 15vmin;
+    width: 10vw; 
+    height: 10vw;
     margin-left: 1vmin;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -300,7 +300,16 @@ body {
     font-weight: bold;
 }
 
+.res > div.res1,
+.res > div.res2,
+.res > div.res3,
+.res > div.res4{
+    justify-content: space-evenly;
+}
 
-
+.res > div.res1 > .triangulo{
+    width: 2vh;
+    height: 2vh;
+}
 
 }
