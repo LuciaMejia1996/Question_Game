@@ -20,97 +20,99 @@ let negative_points = 0;
 let pointe = 0;
 
 const getCuestions = async () => {
-    try {
-        const response = await fetch(`./json/quiz.json`);
+  try {
+    const response = await fetch(`./json/quiz.json`);
 
-        const data = await response.json();
+    const data = await response.json();
 
-        for (const key of CuestionsRandom(data)) {
-            EscribirPreguntas(key);
-        }
-    } catch (error) {
-        console.error(error);
+    for (const key of CuestionsRandom(data)) {
+      EscribirPreguntas(key);
     }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 getCuestions();
 
 function CuestionsRandom(datea) {
-    let array_pregunt = [];
-    for (let i = 0; i < 1; i++) {
-        //numero alaotrio para coger las preguntas
-        const num_random = Math.floor(Math.random() * datea.length);
-        array_pregunt.push(datea[num_random]);
-    }
-    return array_pregunt;
+  let array_pregunt = [];
+  for (let i = 0; i < 1; i++) {
+    //numero alaotrio para coger las preguntas
+    const num_random = Math.floor(Math.random() * datea.length);
+    array_pregunt.push(datea[num_random]);
+  }
+  return array_pregunt;
 }
 
 function EscribirPreguntas({ question, correct, answers }) {
-    pre.textContent = question;
+  pre.textContent = question;
 
-    for (let i = 0; i < answers.length; i++) {
-        if (correct === answers[i]) {
-            const co = res_aleatoria[i];
-            co.textContent = correct;
-            co.classList = 'correct';
-        } else {
-            const co = res_aleatoria[i];
-            co.textContent = answers[i];
-            co.classList = 'incorrect';
-        }
+  for (let i = 0; i < answers.length; i++) {
+    if (correct === answers[i]) {
+      const co = res_aleatoria[i];
+      co.textContent = correct;
+      co.classList = 'correct';
+    } else {
+      const co = res_aleatoria[i];
+      co.textContent = answers[i];
+      co.classList = 'incorrect';
     }
+  }
 }
 
 function IsCorrect(e) {
-    console.log(e.target.classList[0]);
-    if (e.target.classList[0] === 'correct') {
-        pointe++;
-        correctas.textContent = pointe;
-        Question.textContent = number_question++;
-        alert('Has acertado, Felicidades');
-        if (pointe >= 3) {
-            number_question = 0;
-            Question.textContent = number_question;
-            alert('Juego Finalizado, has ganado c:');
-            EndGame();
-        } else {
-            getCuestions();
-        }
+  console.log(e.target.classList[0]);
+  if (e.target.classList[0] === 'correct') {
+    pointe++;
+    number_question++;
+    correctas.textContent = pointe;
+    Question.textContent = number_question;
+    alert('Has acertado, Felicidades');
+    if (pointe >= 3) {
+      number_question = 0;
+      Question.textContent = number_question;
+      alert('Juego Finalizado, has ganado c:');
+      EndGame();
     } else {
-        negative_points++;
-        falla.textContent = negative_points;
-        Question.textContent = number_question++;
-        alert('Has Fallado, que mal :c');
-        if (negative_points >= 3) {
-            alert('Juego Finalizado, has perdido');
-            number_question = 0;
-            Question.textContent = number_question;
-            EndGame();
-        } else {
-            getCuestions();
-        }
+      getCuestions();
     }
+  } else {
+    negative_points++;
+    number_question++;
+    falla.textContent = negative_points;
+    Question.textContent = number_question++;
+    alert('Has Fallado, que mal :c');
+    if (negative_points >= 3) {
+      alert('Juego Finalizado, has perdido');
+      number_question = 0;
+      Question.textContent = number_question;
+      EndGame();
+    } else {
+      getCuestions();
+    }
+  }
 }
 
 function EndGame() {
-    correctas.textContent = 0;
-    falla.textContent = 0;
-    negative_points = 0;
-    pointe = 0;
+  correctas.textContent = 0;
+  falla.textContent = 0;
+  negative_points = 0;
+  pointe = 0;
 
-    getCuestions();
+  getCuestions();
 }
 
 function skip() {
-    const coso = confirm('¿Desea saltarse esta pregunta?');
-    if (coso) {
-        getCuestions();
-    }
+  const coso = confirm('¿Desea saltarse esta pregunta?');
+  if (coso) {
+    getCuestions();
+  }
 }
 
 const div = document.querySelectorAll('div.res');
 for (const key of div) {
-    key.addEventListener('click', IsCorrect);
+  key.addEventListener('click', IsCorrect);
 }
 
 skip_button.addEventListener('click', skip);
