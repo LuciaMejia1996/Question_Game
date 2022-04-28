@@ -276,7 +276,7 @@ body {
 .res > div.res3 > p,
 .res > div.res4 > p{
     margin-right: 4vw;
-    font-size: 1.5vw;
+    font-size: 1.5vmin;
     color: white;
     font-weight: bold;
 }
