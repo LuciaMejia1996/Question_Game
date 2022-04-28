@@ -65,12 +65,12 @@ function IsCorrect(e) {
   console.log(e.target.classList[0]);
   if (e.target.classList[0] === 'correct') {
     pointe++;
-    number_question++;
+    number_question + 1;
     correctas.textContent = pointe;
     Question.textContent = number_question;
     alert('Has acertado, Felicidades');
     if (pointe >= 3) {
-      number_question = 0;
+      number_question = 1;
       Question.textContent = number_question;
       alert('Juego Finalizado, has ganado c:');
       EndGame();
@@ -85,7 +85,7 @@ function IsCorrect(e) {
     alert('Has Fallado, que mal :c');
     if (negative_points >= 3) {
       alert('Juego Finalizado, has perdido');
-      number_question = 0;
+      number_question = 1;
       Question.textContent = number_question;
       EndGame();
     } else {
