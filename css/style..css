@@ -10,6 +10,7 @@ body {
     display: grid;
     grid-template-rows: 10vh 1fr 1fr;
     grid-template-columns: 1fr;
+    background-color: rgb(228, 218, 218);
 }
 
 
@@ -33,7 +34,6 @@ body {
     display: grid;
     grid-template-columns: 20vw 1fr 20vw;
     grid-template-rows: 1fr 1fr 1fr;
-    background-color: rgb(228, 218, 218);
 }
 
 .part2 > .skip{
@@ -121,9 +121,7 @@ body {
     place-items: center;
     justify-items: center;
     grid-row-start: 3;
-    gap: 1vw;
-    margin: 0;
-    background-color: rgb(228, 218, 218);
+    margin-bottom: 5vw;
 
 }
 
@@ -234,8 +232,18 @@ body {
 }
 
 .res > div.res1,
+.res > div.res3{
+    margin-left: 3vw;
+}
+
+.res > div.res2,
+.res > div.res4{
+    margin-right: 4vw;
+}
+
+.res > div.res1,
 .res > div.res2{
-    margin-bottom: -5vw;
+    margin-bottom: -2vw;
 }
 
 .res > div.res3,
@@ -247,10 +255,10 @@ body {
 
 /*Me dejo este comentario pa no perderme*/
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
 
  .question > p {
-    font-size: 2.2vmin;
+    font-size: 2.0vmin;
     font-weight: bold;
 }
     
@@ -276,7 +284,7 @@ body {
 .res > div.res3 > p,
 .res > div.res4 > p{
     margin-right: 4vw;
-    font-size: 2vmin;
+    font-size: 2.1vmin;
     color: white;
     font-weight: bold;
 }
@@ -312,4 +320,29 @@ body {
     height: 2vh;
 }
 
+.res > div.res1,
+.res > div.res2{
+    margin-bottom: -5vh;
+}
+
+}
+
+
+/*Coso para no perderme dos*/
+
+@media (min-width: 650px) and (max-width: 1024px){
+    .res > div.res1,
+    .res > div.res2{
+    margin-bottom: -8vh;
+}
+
+.res > div.res1 > p,
+.res > div.res2 > p,
+.res > div.res3 > p,
+.res > div.res4 > p{
+    margin-right: 4vw;
+    font-size: 2.5vmin;
+    color: white;
+    font-weight: bold;
+}
 }
