@@ -345,4 +345,58 @@ body {
     color: white;
     font-weight: bold;
 }
+
+.part2 > .skip > button {
+    width: 20vmin;
+    height: 8vmin;
+    border: 0;
+    margin-right: 2vmin;
+    font-size: 2.5vmin;
+    background-color: rgb(60, 60, 153);
+    color: white;
+    font-weight: bold;
+}
+
+}
+
+
+@media (min-width: 650px) and (orientation: landscape) {
+    .res > div.res1,
+    .res > div.res2{
+    margin-bottom: 2vh;
+}
+
+.part2 > .skip > button {
+    width: 25vmin;
+    height: 10vmin;
+    border: 0;
+    margin-right: 2vmin;
+    font-size: 2.5vmin;
+    background-color: rgb(60, 60, 153);
+    color: white;
+    font-weight: bold;
+}
+
+
+}
+
+
+@media (min-width: 1024px) and (orientation: landscape) {
+    .res > div.res1,
+    .res > div.res2{
+    margin-bottom: -6vh;
+}
+
+.part2 > .skip > button {
+    width: 18vmin;
+    height: 8vmin;
+    border: 0;
+    margin-right: 2vmin;
+    font-size: 2.5vmin;
+    background-color: rgb(60, 60, 153);
+    color: white;
+    font-weight: bold;
+}
+
+
 }
