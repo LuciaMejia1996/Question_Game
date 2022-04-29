@@ -363,6 +363,10 @@ body {
 
 @media (min-width: 650px) and (orientation: landscape) {
     
+    .part2 > .point > .circulo{
+        width: 12vmin; 
+        height: 12vmin;       
+    }
 
 .part2 > .skip > button {
     width: 25vmin;

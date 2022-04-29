@@ -103,7 +103,13 @@ function EndGame() {
 function skip() {
   const coso = confirm('¿Desea saltarse esta pregunta?');
   if (coso) {
-    getCuestions();
+    if (number_question >= 50) {
+      EndGame();
+    } else {
+      number_question++;
+      Question.textContent = number_question;
+      getCuestions();
+    }
   }
 }
 
