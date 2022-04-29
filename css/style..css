@@ -244,12 +244,12 @@ body {
 
 .res > div.res1,
 .res > div.res2{
-    margin-bottom: -2vw;
+    margin-top: -5vw;
 }
 
 .res > div.res3,
 .res > div.res4 {
-    margin-bottom: 0.8vh;
+    margin-bottom: 3vh;
 }
 
 
@@ -362,10 +362,7 @@ body {
 
 
 @media (min-width: 650px) and (orientation: landscape) {
-    .res > div.res1,
-    .res > div.res2{
-    margin-bottom: 2vh;
-}
+    
 
 .part2 > .skip > button {
     width: 25vmin;

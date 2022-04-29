@@ -17,6 +17,7 @@ const res_aleatoria = [pre_red, pre_blue, pre_yellow, pre_green];
 let number_question = 1;
 let negative_points = 0;
 let pointe = 0;
+let numero = 0;
 
 const getCuestions = async () => {
   try {
@@ -37,8 +38,8 @@ getCuestions();
 function CuestionsRandom(datea) {
   let array_pregunt = [];
 
-  const num_random = Math.floor(Math.random() * datea.length);
-  array_pregunt.push(datea[num_random]);
+  //const num_random = Math.floor(Math.random() * datea.length);
+  array_pregunt.push(datea[numero++]);
 
   return array_pregunt;
 }
@@ -69,21 +70,18 @@ function IsCorrect(e) {
       number_question++;
       correctas.textContent = pointe;
       Question.textContent = number_question;
-      alert('Has acertado, Felicidades 😃');
-      if (pointe >= 3) {
-        alert('Juego Finalizado, has ganado  🥳');
+
+      if (number_question >= 50) {
+        alert('Juego Finalizado. Puntos: ' + pointe);
         EndGame();
       } else {
         getCuestions();
       }
     } else {
-      negative_points++;
       number_question++;
-      falla.textContent = negative_points;
       Question.textContent = number_question;
-      alert('Has Fallado, que mal 😨');
-      if (negative_points >= 3) {
-        alert('Juego Finalizado, has perdido 😭');
+      if (number_question >= 51) {
+        alert('Juego Finalizado. Puntos: ' + pointe);
         EndGame();
       } else {
         getCuestions();
@@ -93,8 +91,8 @@ function IsCorrect(e) {
 }
 
 function EndGame() {
+  numero = 0;
   correctas.textContent = 0;
-  falla.textContent = 0;
   negative_points = 0;
   pointe = 0;
   number_question = 1;
