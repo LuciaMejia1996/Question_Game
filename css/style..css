@@ -229,9 +229,16 @@ body {
 }
     
 
+.res > div.res1,
+.res > div.res3,
+.res > div.res2,
+.res > div.res4 {
+    margin-left: 2vw;
+}
+
 .res > div.res3,
 .res > div.res4 {
-    margin-bottom: 6vh;
+    margin-bottom: 6vw;
 }
 
 .part2 > .skip > button {
@@ -288,7 +295,7 @@ body {
 
 .res > div.res1,
 .res > div.res2{
-    margin-bottom: -5vh;
+    margin-bottom: -9vh;
 }
 
 }
