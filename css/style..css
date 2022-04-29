@@ -226,6 +226,7 @@ body {
  .question > p {
     font-size: 3vmin;
     font-weight: bold;
+    text-align: center;
 }
     
 
