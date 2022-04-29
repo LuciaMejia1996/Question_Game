@@ -109,7 +109,7 @@ function skip() {
   }
 }
 
-const div = document.querySelectorAll('div.res');
+const div = document.querySelectorAll('div.res > div');
 for (const key of div) {
   key.addEventListener('click', IsCorrect);
 }
