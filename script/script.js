@@ -2,7 +2,6 @@
 const pre = document.querySelector('.question > p');
 const skip_button = document.querySelector('.part2 > .skip > button');
 let Question = document.querySelector('.part2 > .point > .circulo > p');
-
 const correctas = document.querySelector('.part2 > .respuesta > p.acertadas');
 const falla = document.querySelector('.part2 > .respuesta > p.fallos');
 
@@ -37,11 +36,10 @@ getCuestions();
 
 function CuestionsRandom(datea) {
   let array_pregunt = [];
-  for (let i = 0; i < 1; i++) {
-    //numero alaotrio para coger las preguntas
-    const num_random = Math.floor(Math.random() * datea.length);
-    array_pregunt.push(datea[num_random]);
-  }
+
+  const num_random = Math.floor(Math.random() * datea.length);
+  array_pregunt.push(datea[num_random]);
+
   return array_pregunt;
 }
 
@@ -65,33 +63,31 @@ function IsCorrect(e) {
   //console.log(e.target.classList[0]);
   const p = e.target;
   const x = p.querySelector('p');
-  if (e.target.classList[0] === 'correct' || x.classList[0] === 'correct') {
-    pointe++;
-    number_question + 1;
-    correctas.textContent = pointe;
-    Question.textContent = number_question;
-    alert('Has acertado, Felicidades 😃');
-    if (pointe >= 3) {
-      number_question = 1;
+  if (x !== null && p !== null) {
+    if (e.target.classList[0] === 'correct' || x.classList[0] === 'correct') {
+      pointe++;
+      number_question++;
+      correctas.textContent = pointe;
       Question.textContent = number_question;
-      alert('Juego Finalizado, has ganado  🥳');
-      EndGame();
+      alert('Has acertado, Felicidades 😃');
+      if (pointe >= 3) {
+        alert('Juego Finalizado, has ganado  🥳');
+        EndGame();
+      } else {
+        getCuestions();
+      }
     } else {
-      getCuestions();
-    }
-  } else {
-    negative_points++;
-    number_question++;
-    falla.textContent = negative_points;
-    Question.textContent = number_question;
-    alert('Has Fallado, que mal 😨');
-    if (negative_points >= 3) {
-      alert('Juego Finalizado, has perdido 😭');
-      number_question = 1;
+      negative_points++;
+      number_question++;
+      falla.textContent = negative_points;
       Question.textContent = number_question;
-      EndGame();
-    } else {
-      getCuestions();
+      alert('Has Fallado, que mal 😨');
+      if (negative_points >= 3) {
+        alert('Juego Finalizado, has perdido 😭');
+        EndGame();
+      } else {
+        getCuestions();
+      }
     }
   }
 }
@@ -101,7 +97,8 @@ function EndGame() {
   falla.textContent = 0;
   negative_points = 0;
   pointe = 0;
-
+  number_question = 1;
+  Question.textContent = number_question;
   getCuestions();
 }
 
