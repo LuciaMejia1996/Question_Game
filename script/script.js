@@ -105,7 +105,7 @@ function EndGame() {
 function skip() {
   const coso = confirm('¿Desea saltarse esta pregunta?');
   if (coso) {
-    if (number_question >= 50) {
+    if (number_question >= Number) {
       EndGame();
     } else {
       number_question++;
