@@ -378,6 +378,16 @@ body {
     font-weight: bold;
 }
 
+.res > div.res1 > .triangulo{
+    margin-left: 2vw;
+    width: 2vw;
+    height: 2vw;
+    margin-bottom: -0.5vw;
+    border-left: 5vmin solid transparent;
+    border-right: 5vmin solid transparent;
+    border-bottom: 8vmin solid rgb(247, 247, 247);}
+
+
 
 }
 
