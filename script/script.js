@@ -4,7 +4,6 @@ const skip_button = document.querySelector('.part2 > .skip > button');
 let Question = document.querySelector('.part2 > .point > .circulo > p');
 const correctas = document.querySelector('.part2 > .respuesta > p.acertadas');
 const falla = document.querySelector('.part2 > .respuesta > p.fallos');
-
 const pre_red = document.querySelector('.res > .res1 > p');
 const pre_blue = document.querySelector('.res > .res2 > p');
 const pre_yellow = document.querySelector('.res > .res3 > p');
@@ -14,6 +13,7 @@ const pre_green = document.querySelector('.res > .res4 > p');
 const res_aleatoria = [pre_red, pre_blue, pre_yellow, pre_green];
 
 //puntos negativos
+let Number = 0;
 let number_question = 1;
 let negative_points = 0;
 let pointe = 0;
@@ -24,6 +24,8 @@ const getCuestions = async () => {
     const response = await fetch(`./json/quiz.json`);
 
     const data = await response.json();
+
+    Number = data.length;
 
     for (const key of CuestionsRandom(data)) {
       EscribirPreguntas(key);
@@ -71,7 +73,7 @@ function IsCorrect(e) {
       correctas.textContent = pointe;
       Question.textContent = number_question;
 
-      if (number_question >= 50) {
+      if (number_question >= Number) {
         alert('Juego Finalizado. Puntos: ' + pointe);
         EndGame();
       } else {
@@ -80,7 +82,7 @@ function IsCorrect(e) {
     } else {
       number_question++;
       Question.textContent = number_question;
-      if (number_question >= 51) {
+      if (number_question >= Number) {
         alert('Juego Finalizado. Puntos: ' + pointe);
         EndGame();
       } else {
