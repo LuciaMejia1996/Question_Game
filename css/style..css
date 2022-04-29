@@ -132,24 +132,14 @@ body {
     margin-bottom: 4vw;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 45vw;
     height: 15vh;
     background-color: red ;
 }
 
-
-
-.res > div.res1 > .triangulo{
-    margin-left: 2vw;
-    width: 4vw;
-    height: 4vw;
-    margin-bottom: -1vw;
-    border-left: 5vmin solid transparent;
-    border-right: 5vmin solid transparent;
-    border-bottom: 8vmin solid rgb(247, 247, 247);}
 
 .res > div.res1 > p,
 .res > div.res2 > p,
@@ -159,6 +149,7 @@ body {
     font-size: 1.5vw;
     color: white;
     font-weight: bold;
+    text-align: center;
 }
 
 .res > div.res2{
@@ -167,26 +158,15 @@ body {
     margin-bottom: 4vw;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 45vw;
     height: 15vh;
     background-color: blue;
 }
 
-.res > div.res2 > .ovalo{
-    margin-left: 2vw;
-    width: 6vmin; 
-    height: 6vmin; 
-    border: 3px solid rgb(255, 255, 255); 
-    background: #ffffff;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
+
 
 
 .res > div.res3{
@@ -196,21 +176,12 @@ body {
     height: 15vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: rgb(163, 163, 42);
 }
 
-.res > div.res3 > .circulo{
-    margin-left: 2vw;  
-    width: 8vmin; 
-    height: 8vmin;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #ffffff;
-}
 
 .res > div.res4{
     grid-column-start: 2;
@@ -219,18 +190,12 @@ body {
     height: 15vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: green;
 }
 
-.res > div.res4 > .cuadrado{
-    margin-left: 2vw;
-    width: 7.5vmin; 
-    height: 7.5vmin; 
-    background: #f2f2f3;
-}
 
 .res > div.res1,
 .res > div.res3{
@@ -259,7 +224,7 @@ body {
 @media (max-width: 550px) {
 
  .question > p {
-    font-size: 2.2vmin;
+    font-size: 3vmin;
     font-weight: bold;
 }
     
@@ -285,7 +250,7 @@ body {
 .res > div.res3 > p,
 .res > div.res4 > p{
     margin-right: 4vw;
-    font-size: 2.1vmin;
+    font-size: 3vmin;
     color: white;
     font-weight: bold;
 }
@@ -378,16 +343,6 @@ body {
     color: white;
     font-weight: bold;
 }
-
-.res > div.res1 > .triangulo{
-    margin-left: 2vw;
-    width: 2vw;
-    height: 2vw;
-    margin-bottom: -0.5vw;
-    border-left: 5vmin solid transparent;
-    border-right: 5vmin solid transparent;
-    border-bottom: 8vmin solid rgb(247, 247, 247);}
-
 
 
 }
